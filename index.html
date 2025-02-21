@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>shopping list</title>
+    <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
-    
+    <form>
+    <div class="container">
+        <a href="#" class="back">&larr; Voltar</a>
+        <h1>Compras da semana</h1>
+        <div class="input-group">
+            <input id="input-produtos" type="text" placeholder="Adicione um novo item">
+            <button type="submit">Adicionar item</button>
+        </div>
+        <ul class="shopping-list">
+            <li><input type="checkbox"> Pão de forma <span class="delete"><img src="img/waste-stroke-rounded.svg" alt=""></span></li>
+        </ul>
+        <div class="alert">⚠ O item foi removido da lista <span class="close"><button class="botunn-cancel"><img src="img/cancel-02-stroke-rounded.svg" alt=""></button></span></div>
+    </div>
+    <script src="programacao.js"></script>
+</form>
 </body>
 </html>
