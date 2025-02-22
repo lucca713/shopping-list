@@ -42,17 +42,17 @@ form.addEventListener("submit", (e)=>{
 
 function creamCamp(name){
     try{
-
+    if(name){
         newSpanFrase.textContent= name
 
         newSpanImg.append(newImg)
         
         newProductName.append(newInput,  newSpanFrase, newSpanImg )
         
-        lista.append(newProductName)
-        
+        lista.appendChild(newProductName)
+    }
     }catch{
-        alert("erro em adicionar o pruduto")
+        alert("Escreva o produto que você queira adicionar")
     }
 }
 
