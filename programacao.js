@@ -5,7 +5,7 @@ const lista = document.querySelector("ul")
 let listaDosProdutos = []
 let num = 0
 
-
+console.log(num)
 product.addEventListener("input",(e)=>{
     e.preventDefault()
     console.log(product.value)
@@ -21,10 +21,11 @@ console.log(lista)
 form.addEventListener("submit", (e)=>{
     e.preventDefault()
     creamCamp(product.value)
-    listaDosProdutos.push(product.value)
     
+    product.value = ''
     
 })
+
 
 
 function creamCamp(name){
@@ -34,7 +35,6 @@ function creamCamp(name){
          num += 1  //soma de id  
         let newProductName = document.createElement("li")
         newProductName.setAttribute("id",`newProductName${num}`)
-        
 
         let newSpanFrase = document.createElement("span")
         newSpanFrase.setAttribute("id","newSpanFrase")
@@ -44,7 +44,7 @@ function creamCamp(name){
 
         const newSpanImg = document.createElement("span")
         newSpanImg.classList.add("delete")
-        newSpanImg.setAttribute("id","newSpanImg")
+        newSpanImg.setAttribute("type","click")
 
         const newImg = document.createElement("img")
         newImg.src="img/waste-stroke-rounded.svg"
@@ -58,6 +58,19 @@ function creamCamp(name){
         newProductName.append(newInput, newSpanFrase, newSpanImg )
         
         lista.appendChild(newProductName)
+        console.log(newSpanImg)
+
+        listaDosProdutos.push(newProductName.id)
+
+        newSpanImg.addEventListener("click", (e) => {
+            console.log(newProductName.id)
+            for(var i = 0; i < listaDosProdutos.length; i++){
+                if(listaDosProdutos[i] ==  newProductName.id){
+                   document.getElementById(newProductName.id).remove()
+                }
+            }
+        } )
+            
     }
 
     }catch{
@@ -65,5 +78,11 @@ function creamCamp(name){
         alert("Escreva o produto que você queira adicionar")
     }
 }
+
+
+
+
+
+
 
 //texxtcontent
