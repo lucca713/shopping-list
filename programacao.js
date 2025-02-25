@@ -5,6 +5,31 @@ const lista = document.querySelector("ul")
 let listaDosProdutos = []
 let num = 0
 
+//botao de apagar
+const newDiv = document.createElement("div")
+newDiv.classList.add("alert")
+
+const spanExcluirFrase = document.createElement("span")
+spanExcluirFrase.textContent="⚠ O item foi removido da lista"
+
+const spanExcluirClose = document.createElement("span")
+spanExcluirClose.classList.add("close")
+
+const buttonClose = document.createElement("button")
+buttonClose.setAttribute("type","button")
+buttonClose.classList.add("botunn-cancel")
+
+const imgExcluir = document.createElement("img")
+imgExcluir.src = "img/cancel-02-stroke-rounded.svg"
+
+buttonClose.append(imgExcluir)
+spanExcluirClose.append(buttonClose)
+
+newDiv.append(spanExcluirFrase, spanExcluirClose)
+
+
+//fim criaca botao apagar
+
 console.log(num)
 product.addEventListener("input",(e)=>{
     e.preventDefault()
@@ -58,7 +83,7 @@ function creamCamp(name){
         newProductName.append(newInput, newSpanFrase, newSpanImg )
         
         lista.appendChild(newProductName)
-        console.log(newSpanImg)
+        
 
         listaDosProdutos.push(newProductName.id)
 
@@ -67,6 +92,11 @@ function creamCamp(name){
             for(var i = 0; i < listaDosProdutos.length; i++){
                 if(listaDosProdutos[i] ==  newProductName.id){
                    document.getElementById(newProductName.id).remove()
+                   lista.appendChild(newDiv)
+
+                   buttonClose.addEventListener("click", (e)=>{
+                      document.querySelector(".alert").remove()
+                   })
                 }
             }
         } )
