@@ -19,14 +19,6 @@ Este projeto é uma **lista de mercado interativa**, onde você pode adicionar p
 - **CSS** → Estilização e responsividade
 - **JavaScript** → Funcionalidade interativa
 
-## 🔧 Como Usar
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-   ```
-2. Abra o arquivo `index.html` no navegador.
-3. Comece a adicionar itens à sua lista de compras!
-
 ## 📌 Melhorias Futuras
 - [ ] Adicionar calculadora de preços
 - [ ] Salvar a lista no armazenamento local para manter os itens ao recarregar a página
