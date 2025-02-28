@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 .container {
@@ -46,6 +46,12 @@ h1 {
     list-style: none;
     padding: 0;
     margin-top: 20px;
+    max-height: 300px; /* Define uma altura máxima */
+    overflow-y: auto; /* Adiciona rolagem quando necessário */
+    border: 1px solid #ccc;
+    padding: 10px;
+    
+   
 }
 .shopping-list li {
     display: flex;
@@ -87,3 +93,4 @@ h1 {
 .img_lixo{
     
 }
+
